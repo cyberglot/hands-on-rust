@@ -17,7 +17,7 @@ fn main() {
     loop {
         println!("Hello, world!");
         let name = hello_yourname();
-        // treehouse_guestlist(&name);
+        treehouse_guestlist(&name);
 
         let known_visitor = visitor_list
             .iter()
@@ -54,8 +54,8 @@ fn hello_yourname() -> String {
 fn treehouse_guestlist(name : &str){
     let visitor_list = ["a", "b", "c"];
     let mut allow_them_in = false;
-    for visitor in &visitor_list {
-        if visitor == &name {
+    for visitor in visitor_list {
+        if visitor == name {
             allow_them_in = true;
         }
     }
@@ -94,7 +94,7 @@ impl Visitor {
     }
 
     fn greet_visitor(&self) {
-        // println!("{}", self.greeting);
+        println!("{}", self.greeting);
 
         match &self.action {
             VisitorAction::Accept { note } => {
